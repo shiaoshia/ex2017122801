@@ -7,13 +7,18 @@ import android.widget.TextView;
 
 public class Sec2Activity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sec2);
+
+        //讀取MainActivity傳來的資料
         TextView tv2=findViewById(R.id.textView2);
         Intent it=getIntent();
         String str=it.getStringExtra("data");
         tv2.setText(str);
+
     }
 }
