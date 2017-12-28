@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView TV;
+    EditText ET1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     //跳下一頁,將值傳給下一頁
     public void onClick2(View v){
 
-        EditText ET1;
+
         ET1=findViewById(R.id.editText);
         Intent it=new Intent(MainActivity.this,Sec2Activity.class);
         it.putExtra("data", ET1.getText().toString());
@@ -39,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
     //跳第三頁,並接教第三頁回傳資料
     public void onClick3(View v){
         Intent it=new Intent(MainActivity.this,thr3Activity.class);
-        //startActivity(it);
+        //it.putExtra("data", ET1.getText().toString());
+
         startActivityForResult(it,123);
     }
 

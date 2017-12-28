@@ -3,6 +3,7 @@ package tw.com.shiaoshia.ex2017122801;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 public class Sec2Activity extends AppCompatActivity {
@@ -19,6 +20,10 @@ public class Sec2Activity extends AppCompatActivity {
         Intent it=getIntent();
         String str=it.getStringExtra("data");
         tv2.setText(str);
+    }
 
+    public void onClick(View v){
+        Intent it=new Intent(Sec2Activity.this,MainActivity.class);
+        startActivity(it);
     }
 }

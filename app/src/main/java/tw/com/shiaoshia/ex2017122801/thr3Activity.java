@@ -13,6 +13,9 @@ public class thr3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thr3);
         et2=findViewById(R.id.editText2);
+        Intent it=getIntent();
+        //String str=it.getStringExtra("data");
+        //et2.setText(str);
     }
 
     //回傳資料給第一頁
