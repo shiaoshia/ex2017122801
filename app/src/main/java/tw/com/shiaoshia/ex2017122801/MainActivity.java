@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,9 +25,13 @@ public class MainActivity extends AppCompatActivity {
         TV.setText(this.getString(R.string.TV1));
     }
 
-    //跳下一頁
+    //跳下一頁,將值傳給下一頁
     public void onClick2(View v){
+
+        EditText ET1;
+        ET1=findViewById(R.id.editText);
         Intent it=new Intent(MainActivity.this,Sec2Activity.class);
+        it.putExtra("data", ET1.getText().toString());
         startActivity(it);
     }
 
