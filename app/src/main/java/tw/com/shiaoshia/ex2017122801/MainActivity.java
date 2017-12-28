@@ -1,5 +1,6 @@
 package tw.com.shiaoshia.ex2017122801;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,9 +19,15 @@ public class MainActivity extends AppCompatActivity {
         //TV=(TextView)findViewById(R.id.textView);
         TV=findViewById(R.id.textView);
 
-        //從strings.xml檔裡讀取資料
+        //從strings.xml檔裡讀取資料的2個方法
         //TV.setText(getResources().getString(R.string.TV1));
         TV.setText(this.getString(R.string.TV1));
+    }
+
+    //跳下一頁
+    public void onClick2(View v){
+        Intent it=new Intent(MainActivity.this,Sec2Activity.class);
+        startActivity(it);
     }
 
 }
