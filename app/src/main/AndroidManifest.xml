@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Sec2Activity" />
-        <activity android:name=".thr3Activity"></activity>
+        <activity android:name=".thr3Activity" />
+        <activity android:name=".for4Activity"></activity>
     </application>
 
 </manifest>

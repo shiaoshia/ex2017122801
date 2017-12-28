@@ -8,8 +8,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView TV;
+    TextView TV,TV3;
     EditText ET1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TV=findViewById(R.id.textView);
+        TV3=findViewById(R.id.textView3);
         ET1=findViewById(R.id.editText);
+
 
     }
 
@@ -27,27 +30,42 @@ public class MainActivity extends AppCompatActivity {
         //TV.setText(this.getString(R.string.TV1));
     }
 
-    //跳下一頁,將值傳給下一頁
+    //跳第二頁,將值傳給第二頁
     public void onClick2(View v){
         Intent it=new Intent(MainActivity.this,Sec2Activity.class);
         it.putExtra("data", ET1.getText().toString());
         startActivity(it);
+        ET1.setText("");
     }
-    //跳第三頁,並接教第三頁回傳資料
+    //跳第三頁,並接收第三頁回傳資料
     public void onClick3(View v){
         Intent it=new Intent(MainActivity.this,thr3Activity.class);
         it.putExtra("data", ET1.getText().toString());
         startActivityForResult(it,123);
-
+        ET1.setText("");
     }
 
-    //接收第三頁回傳資料
+    //跳第四頁,並接收第四頁回傳資料
+    public void onClick4(View v){
+        Intent it=new Intent(MainActivity.this,for4Activity.class);
+        startActivityForResult(it,456);
+        ET1.setText("");
+    }
+
+    //接收第三、四頁回傳資料
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if(resultCode == RESULT_OK) {
-            TV.setText(data.getStringExtra("myresult"));
+        if(requestCode == 123){
+            if(resultCode == RESULT_OK) {
+                TV.setText(data.getStringExtra("myresult"));
+            }
         }
+        if(requestCode == 456){
+            if(resultCode == RESULT_OK) {
+                TV3.setText(data.getStringExtra("myresult"));
+            }
+        }
+
     }
 }
