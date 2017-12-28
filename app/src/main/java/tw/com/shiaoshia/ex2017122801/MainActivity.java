@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    TextView TV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick1(View v){
-        TextView TV;
-        TV=(TextView)findViewById(R.id.textView);
+
+        //TV=(TextView)findViewById(R.id.textView);
+        TV=findViewById(R.id.textView);
         TV.setText("123");
 
     }
