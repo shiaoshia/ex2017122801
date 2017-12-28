@@ -17,13 +17,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TV=findViewById(R.id.textView);
+        ET1=findViewById(R.id.editText);
+
     }
 
     public void onClick1(View v){
-
-        //TV=(TextView)findViewById(R.id.textView);
-
-
         //從strings.xml檔裡讀取資料的2個方法
         TV.setText(getResources().getString(R.string.TV1));
         //TV.setText(this.getString(R.string.TV1));
@@ -31,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
     //跳下一頁,將值傳給下一頁
     public void onClick2(View v){
-
-
-        ET1=findViewById(R.id.editText);
         Intent it=new Intent(MainActivity.this,Sec2Activity.class);
         it.putExtra("data", ET1.getText().toString());
         startActivity(it);
@@ -41,15 +36,18 @@ public class MainActivity extends AppCompatActivity {
     //跳第三頁,並接教第三頁回傳資料
     public void onClick3(View v){
         Intent it=new Intent(MainActivity.this,thr3Activity.class);
-        //it.putExtra("data", ET1.getText().toString());
-
+        it.putExtra("data", ET1.getText().toString());
         startActivityForResult(it,123);
+
     }
 
     //接收第三頁回傳資料
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        TV.setText(data.getStringExtra("myresult"));
+
+        if(resultCode == RESULT_OK) {
+            TV.setText(data.getStringExtra("myresult"));
+        }
     }
 }

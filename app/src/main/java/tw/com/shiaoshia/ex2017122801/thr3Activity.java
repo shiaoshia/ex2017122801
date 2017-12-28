@@ -14,8 +14,8 @@ public class thr3Activity extends AppCompatActivity {
         setContentView(R.layout.activity_thr3);
         et2=findViewById(R.id.editText2);
         Intent it=getIntent();
-        //String str=it.getStringExtra("data");
-        //et2.setText(str);
+        String str=it.getStringExtra("data");
+        et2.setText(str);
     }
 
     //回傳資料給第一頁
@@ -27,7 +27,7 @@ public class thr3Activity extends AppCompatActivity {
     }
 
     public void onClickCancel(View v){
-        et2.setText("");
+        finish();
     }
 
 }

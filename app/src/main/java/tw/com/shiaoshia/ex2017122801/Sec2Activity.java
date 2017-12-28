@@ -23,7 +23,9 @@ public class Sec2Activity extends AppCompatActivity {
     }
 
     public void onClick(View v){
-        Intent it=new Intent(Sec2Activity.this,MainActivity.class);
-        startActivity(it);
+        //Intent it=new Intent(Sec2Activity.this,MainActivity.class);
+        //startActivity(it);
+        Intent it=new Intent();
+        finish();
     }
 }
