@@ -10,7 +10,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     TextView TV,TV3;
     EditText ET1;
-
+    final int REQUEST_PAGE_3 = 123;
+    final int REQUEST_PAGE_4 = 456;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +42,14 @@ public class MainActivity extends AppCompatActivity {
     public void onClick3(View v){
         Intent it=new Intent(MainActivity.this,thr3Activity.class);
         it.putExtra("data", ET1.getText().toString());
-        startActivityForResult(it,123);
+        startActivityForResult(it,REQUEST_PAGE_3);
         ET1.setText("");
     }
 
     //跳第四頁,並接收第四頁回傳資料
     public void onClick4(View v){
         Intent it=new Intent(MainActivity.this,for4Activity.class);
-        startActivityForResult(it,456);
+        startActivityForResult(it,REQUEST_PAGE_4);
         ET1.setText("");
     }
 
