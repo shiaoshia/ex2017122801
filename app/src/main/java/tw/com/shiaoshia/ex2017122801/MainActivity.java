@@ -13,12 +13,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TV=findViewById(R.id.textView);
     }
 
     public void onClick1(View v){
 
         //TV=(TextView)findViewById(R.id.textView);
-        TV=findViewById(R.id.textView);
+
 
         //從strings.xml檔裡讀取資料的2個方法
         TV.setText(getResources().getString(R.string.TV1));
@@ -34,13 +36,17 @@ public class MainActivity extends AppCompatActivity {
         it.putExtra("data", ET1.getText().toString());
         startActivity(it);
     }
-    //跳第三頁
+    //跳第三頁,並接教第三頁回傳資料
     public void onClick3(View v){
-
         Intent it=new Intent(MainActivity.this,thr3Activity.class);
-        startActivity(it);
-
+        //startActivity(it);
+        startActivityForResult(it,123);
     }
 
-
+    //接收第三頁回傳資料
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        TV.setText(data.getStringExtra("myresult"));
+    }
 }
