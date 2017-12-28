@@ -17,8 +17,10 @@ public class MainActivity extends AppCompatActivity {
 
         //TV=(TextView)findViewById(R.id.textView);
         TV=findViewById(R.id.textView);
-        TV.setText("123");
 
+        //從strings.xml檔裡讀取資料
+        //TV.setText(getResources().getString(R.string.TV1));
+        TV.setText(this.getString(R.string.TV1));
     }
 
 }
