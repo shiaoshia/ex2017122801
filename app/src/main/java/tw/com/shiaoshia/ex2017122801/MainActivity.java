@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         //從strings.xml檔裡讀取資料的2個方法
         TV.setText(getResources().getString(R.string.TV1));
         //TV.setText(this.getString(R.string.TV1));
+
     }
 
     //跳第二頁,將值傳給第二頁
