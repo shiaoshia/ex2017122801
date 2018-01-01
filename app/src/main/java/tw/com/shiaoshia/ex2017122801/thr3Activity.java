@@ -19,14 +19,14 @@ public class thr3Activity extends AppCompatActivity {
     }
 
     //回傳資料給第一頁
-    public void onClickOkay(View v){
+    public void onClickOkay(View v) {
         Intent it=new Intent();
         it.putExtra("myresult",et2.getText().toString());
         setResult(RESULT_OK,it);
         finish();
     }
 
-    public void onClickCancel(View v){
+    public void onClickCancel(View v) {
         finish();
     }
 
